@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 ###
-  def guch
+  def guchi
   end
-
+###
 
   # GET /users
   # GET /users.json

@@ -1,49 +1,52 @@
-<!DOCUTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html land= "ja">
 <head>
 	<meta charset= "utf-8">
 	<title>StressShredder</title>
-	<link rel= "stylesheet "href="style.css">
-
+	<link rel= "stylesheet "href="style.css" >
 </head>
+
 <body>
 	<header>
 		<h1>StressShredder</h1>
 	</header>
-<!--- 
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
---->
-	<div id= "container">
-	<div id= "content">
-		<article>
+	
+	<div CLASS= "container"> 
+	<div CLASS= "content">
+ 		<article>
 			<p>コップが溢れてしまう前に、<br>「ぐち」「じまん」「おいのり」３種類の本音を吐き出してしまおう。<br>自分が抱えている気持ちをあえて言葉にすることで葛藤を見出せる・・・・かも。</p>
 			<figure　>
 				<%= image_tag 'jizou.png' , :alt => 'お地蔵さんです。' %>
 <!---	<img src= "jizou.png"　alt= "お地蔵さんです。"　--->
+
 			</figure>
 			<h2>Nouaru-Taka Tsume Kakusu</h2>
 		</article>
 	</div>
-	<div id= "menu">
+
+	<div CLASS= "menu">
+	<br><br><br>
 		<aside>
 		<ul>
 		<li><font size="11">
-		<%= link_to 'ぐち', 'guch.html' %>
+		<%= link_to 'ぐち', 'guchi.html' %>
 		</font>
 		</li>
 		<br>
 <!---		<li><a href= "guch.html"><font size="11">ぐち</font></a></li> --->
-		<li><a href= "guch.html"><font size="11">じまん</font></a></li>
+		<li><a href= "guchi.html"><font size="11">じまん</font></a></li>
 				<br>
-		<li><a href= "guch.html"><font size="11">おいのり</font></a></li>
+		<li><a href= "guchi.html"><font size="11">おいのり</font></a></li>
 				<br>
 		</ul>
 		</aside>
 	</div>
-	</div>
-	<footer>
+</div>
+
+<div CLASS= "footer">
 	<small>Copyright &copy; team_cim, all rights reserved.</small>
-	</footer>
+	<br><br><br>
+</div>
+
 </body>
 </html>

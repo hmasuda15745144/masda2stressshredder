@@ -1,0 +1,11 @@
+/*guchページ*/
+input, textarea {display: block}
+
+input		{width: 400px}
+
+input[type= "submit"]	{width: 200px;
+				background-color: #ffaa00;
+			}
+
+textarea			{width: 600px;
+					height: 120px}
