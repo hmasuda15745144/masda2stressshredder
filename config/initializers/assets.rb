@@ -13,3 +13,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( guchi.css )
 Rails.application.config.assets.precompile += %w( jiman.css )
 Rails.application.config.assets.precompile += %w( inori.css )
+Rails.application.config.assets.precompile += %w( list.css )
