@@ -45,9 +45,9 @@ group :development, :test do
   gem 'spring',      '1.1.3'
 end
 
-group :development do
+group :production do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'pg',             '0.18'
+  gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end
 ruby "2.3.0"
