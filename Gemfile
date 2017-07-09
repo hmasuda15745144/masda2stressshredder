@@ -15,12 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
 # Use postgresql as the database for Active Record
-group :development, :test do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'postgresql'
-end
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
