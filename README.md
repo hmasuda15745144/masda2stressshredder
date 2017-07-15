@@ -25,7 +25,7 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 # StressShredder
 #### project name is StressShredder  
 
-#### 2017-前期_中鉢PBL_team_cim エレベータピッチ
+#### 2017-前期_中鉢PBL_team_QIM エレベータピッチ
 
 ##### [自慢したい、愚痴りたいけど、顰蹙を買いたくないを解決]したい  
 ##### [模範を求められる社会人]向けの、  
