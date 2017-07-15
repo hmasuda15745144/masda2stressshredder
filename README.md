@@ -36,7 +36,7 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 ##### [手軽に内緒に記録し、後から振り返れる]が備わっている。  
 ***
 #### 関連リンク
-
+[Heroku](https://calm-garden-50645.herokuapp.com)
 [Backlog](https://github.com/chubachi-pt-2017/StressShredder/projects/1)  
 
-# sgfhgf
+
