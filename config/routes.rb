@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get    '/inori'    => 'static_pages#inori'
   get    '/list'    => 'static_pages#list'
   get    '/guchi-feedback' => 'static_pages#guchi-feedback'
+  get    '/jiman-feedback' => 'static_pages#jiman-feedback'
 ###
 
   get 'static_pages/help'
