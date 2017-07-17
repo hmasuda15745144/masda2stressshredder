@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'static_pages/home'
 
 ###
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
   get    '/jiman'    => 'static_pages#jiman'
   get    '/inori'    => 'static_pages#inori'
   get    '/list'    => 'static_pages#list'
+  get  '/signup',  to: 'users#new'
 ###
 
   get 'static_pages/help'
