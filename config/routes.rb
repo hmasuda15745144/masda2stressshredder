@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   get    '/jiman'    => 'static_pages#jiman'
   get    '/inori'    => 'static_pages#inori'
   get    '/list'    => 'static_pages#list'
+<<<<<<< HEAD
   get  '/signup',  to: 'users#new'
+=======
+  get    '/guchi-feedback' => 'static_pages#guchi-feedback'
+  get    '/jiman-feedback' => 'static_pages#jiman-feedback'
+  get    '/inori-feedback' => 'static_pages#inori-feedback'
+>>>>>>> 1bf078ec6cc8e81e7c46ecb8c73c10c12a8cf422
 ###
 
   get 'static_pages/help'

@@ -1,0 +1,12 @@
+.guchifeedback		{background-image: url(guchi-background-1s.jpg);
+					background-repeat: no-repeat;
+					background-position: 50% 0;
+					background-color:  #8bff3f;
+					text-align: center;
+					padding-top: 420px;
+					padding-bottom: 80px}
+
+.type1				{color: #ffffff;
+					font-size: 60px;
+					font-family: "Comic Sans Ms",sans-serif;
+					text-shadow:  0 5px 5px #000000}
