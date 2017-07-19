@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+  flash[:success] = "Welcome to the StressShredder App!"
     respond_to do |format|
       if @user.save
          log_in @user
@@ -75,6 +75,8 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email)
+      
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
     end
 end
