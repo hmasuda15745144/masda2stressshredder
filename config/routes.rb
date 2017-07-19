@@ -16,10 +16,11 @@ Rails.application.routes.draw do
   get    '/inori-feedback' => 'static_pages#inori-feedback'
 ###
 
-  get 'static_pages/help'
+  
 
   get 'sessions/new'
   root                'static_pages#home'
+  get 'static_pages/home'
   get    'help'    => 'static_pages#help'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
