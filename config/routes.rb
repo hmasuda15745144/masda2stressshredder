@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'static_pages/home'
+root   'static_pages#home'
+  get                'static_pages/home'
+  get    'help'    => 'static_pages#help'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+  resources :users
 
 ###
   get    '/guchi'    => 'static_pages#guchi'
@@ -9,8 +13,8 @@ Rails.application.routes.draw do
   get    '/inori'    => 'static_pages#inori'
   get    '/list'    => 'static_pages#list'
   get    '/signup'  => 'users#new'
-  
-  
+  post   '/signup'   => 'users#create'
+
   get    '/guchi-feedback' => 'static_pages#guchi-feedback'
   get    '/jiman-feedback' => 'static_pages#jiman-feedback'
   get    '/inori-feedback' => 'static_pages#inori-feedback'
@@ -18,14 +22,8 @@ Rails.application.routes.draw do
 
   
 
-  get 'sessions/new'
-  root                'static_pages#home'
-  get 'static_pages/home'
-  get    'help'    => 'static_pages#help'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-  resources :users
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
