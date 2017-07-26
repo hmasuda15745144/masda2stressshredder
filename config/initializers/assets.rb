@@ -8,7 +8,7 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( search.js )
 ###
 
 Rails.application.config.assets.precompile += %w( guchi.css )
@@ -18,6 +18,6 @@ Rails.application.config.assets.precompile += %w( list.css )
 Rails.application.config.assets.precompile += %w( guchi-feedback.css )
 Rails.application.config.assets.precompile += %w( jiman-feedback.css )
 Rails.application.config.assets.precompile += %w( inori-feedback.css )
-Rails.application.config.assets.precompile += %w( custom.css )
-Rails.application.config.assets.precompile += %w( sessions.css )
-Rails.application.config.assets.precompile += %w( list.css )
+#Rails.application.config.assets.precompile += %w( custom.scss )
+#Rails.application.config.assets.precompile += %w( sessions.scss )
+#Rails.application.config.assets.precompile += %w( list.css )
