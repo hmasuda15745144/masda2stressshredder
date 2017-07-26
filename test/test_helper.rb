@@ -5,6 +5,7 @@ require 'rails/test_help'
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
+  include ApplicationHelper
 
   # Add more helper methods to be used by all tests here...
   # テストユーザーがログイン中の場合にtrueを返す
