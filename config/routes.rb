@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get    '/inori'    => 'static_pages#inori'
   get    '/list'    => 'static_pages#list'
   get    '/signup'  => 'users#new'
-  
+   post '/signup'  => 'users#create'
   
   get    '/guchi-feedback' => 'static_pages#guchi-feedback'
   get    '/jiman-feedback' => 'static_pages#jiman-feedback'
