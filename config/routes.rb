@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   #resources :microposts
-  resources :users
+  
   #root 'users#index'
   root                'static_pages#home'
   get 'static_pages/home'
-  get    'help'    => 'static_pages#help'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-
+  get    '/help'    => 'static_pages#help'
+  get    '/login'   => 'sessions#new'
+  post   '/login'   => 'sessions#create'
+  delete '/logout'  => 'sessions#destroy'
+resources :users
   
 
 ###
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get    '/inori'    => 'static_pages#inori'
   get    '/list'    => 'static_pages#list'
   get    '/signup'  => 'users#new'
-   post '/signup'  => 'users#create'
+   #post '/signup'  => 'users#create'
   
   get    '/guchi-feedback' => 'static_pages#guchi-feedback'
   get    '/jiman-feedback' => 'static_pages#jiman-feedback'
@@ -85,3 +85,4 @@ Rails.application.routes.draw do
   #   end
   
 end
+#root 'users#index'
