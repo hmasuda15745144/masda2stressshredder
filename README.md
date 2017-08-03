@@ -13,5 +13,6 @@
 #### 関連リンク
 [Heroku](https://calm-garden-50645.herokuapp.com)  
 [Backlog](https://github.com/chubachi-pt-2017/StressShredder/projects/1)  
+[![Build Status](https://travis-ci.org/chubachi-pt-2017/StressShredder.svg?branch=master)](https://travis-ci.org/chubachi-pt-2017/StressShredder)
 
 
