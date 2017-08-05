@@ -5,6 +5,8 @@
 
 $gray-medium-light: #eaeaea;
 
+
+
 /* universal */
 
 body {
@@ -70,7 +72,7 @@ p {
     text-decoration: none;
   }
   }
-  /* sidebar */
+/* sidebar */
 
 aside {
   section.user_info {
@@ -106,6 +108,8 @@ aside {
 .gravatar_edit {
   margin-top: 15px;
 }
+
+
 #error_explanation {
   color: red;
   ul {
