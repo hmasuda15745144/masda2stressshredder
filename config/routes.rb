@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get '/microposts/id'   => 'microposts#index'
+  get '/microposts/:id'   => 'microposts#index'
+  get '/microposts/list/:id'   => 'microposts#list'
   get '/users/:id'        => 'users#index'
   get '/list/:id'        => 'users#list'
 ###

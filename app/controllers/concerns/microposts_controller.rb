@@ -1,11 +1,16 @@
 class MicropostsController < ApplicationController
-  before_action :set_micropost, only: [:show, :edit, :update, :destroy]
+  before_action :set_micropost, only: [:index, :show, :edit, :update, :destroy]
 
+  def list
+    @msg = 'Microposts controller list アクション'
+    @microposts = Micropost.all
+  end
+  
   # GET /microposts
   # GET /microposts.json
   def index
     @msg = 'Microposts cont. index アクション'
-    @microposts = Micropost.all
+    @micropost = Micropost.find(params[:id])
   end
 
   # GET /microposts/1
