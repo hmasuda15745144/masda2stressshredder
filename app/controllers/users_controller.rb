@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:show, :edit, :update, :destroy]
+before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
     
+  def list
+    @msg = 'Users cont. list アクション'
+    @users = User.all
+  end
+  
   def index
     @msg = 'Users cont. index アクション'
-    @users = User.all
+    @user = User.find(params[:id])
   end
   
   def show

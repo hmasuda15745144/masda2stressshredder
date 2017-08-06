@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  get '/microposts'   => 'microposts#index'
-  get '/users'        => 'users#index'
+  get '/microposts/id'   => 'microposts#index'
+  get '/users/:id'        => 'users#index'
+  get '/list/:id'        => 'users#list'
 ###
   get 'sessions/new'
   get 'users/new'
@@ -22,7 +23,7 @@ resources :users
   get    '/guchi'    => 'static_pages#guchi'
   get    '/jiman'    => 'static_pages#jiman'
   get    '/inori'    => 'static_pages#inori'
-  get    '/list'    => 'static_pages#list'
+#  get    '/list'    => 'static_pages#list'
   get    '/signup'  => 'users#new'
    #post '/signup'  => 'users#create'
   
