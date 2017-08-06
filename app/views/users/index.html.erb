@@ -3,14 +3,9 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1></h1>
-      <p><%= @msg %></p>
+
       
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-         <%= @user.email %>
-         <br>
-         comment:<b>
-          <%= @micropost.content %>
+
         </h1>
     </section>
   </aside>
@@ -18,4 +13,76 @@
 
 <br>
 <%= link_to 'New User', new_user_path %>
-==
+=========
+<!DOCUTYPE html>
+<html land= "ja">
+<head>
+	<meta charset= "utf-8">
+	<title>StressShredder</title>
+	<%= stylesheet_link_tag "application" %>
+
+</head>
+<body>
+	<header>
+		<h1>Welcome to the StressShredder</h1>
+	</header>
+	
+      <p><%= @msg %></p>
+      
+	<div CLASS= "container"> 
+	<div CLASS= "content">
+		<article>
+			<p>コップが溢れてしまう前に、<br>「ぐち」「じまん」「おいのり」３種類の本音を吐き出してしまおう。<br>自分が抱えている気持ちをあえて言葉にすることで葛藤を見出せる・・・・かも。</p>
+			<figure　>
+				<%= image_tag 'jizou.png' , :alt => 'お地蔵さんです。' %>
+<!---	<img src= "jizou.png"　alt= "お地蔵さんです。"　--->
+			</figure>
+			<h2>Nouaru-Taka Tsume Kakusu</h2>
+		</article>
+		
+	</div>
+	<div CLASS= "menu">
+		<aside>
+		<ul>
+		<li><font size="11">
+		<%= link_to 'ぐち', 'guchi.html' %>
+		</font>
+		</li>
+		<br>
+<!---		<li><a href= "guch.html"><font size="11">ぐち</font></a></li> --->
+		<li><font size="11">
+		<%= link_to 'じまん', 'jiman.html' %>
+		</font></li>
+<!---		<li><a href= "guch.html"><font size="11">じまん</font></a></li> --->
+				<br>
+		<li><font size="11">
+		<%= link_to 'おいのり', 'inori.html' %>
+		</font></li>
+<!---		<li><a href= "guch.html"><font size="11">おいのり</font></a></li> --->
+				<br>
+		</ul>
+		</aside>
+		
+		<%= gravatar_for @user %>
+    <%= @user.name %>
+    <%= @user.email %>
+    <br>comment:<b>
+    <%= @micropost.content %>
+		
+		<br><br><br><br><br>
+			<font size="11" face="Impact">
+			<%= link_to 'ふりかえり', 'list.html' %>
+			</font></li>
+				<br><br><br><br><br>
+			<font size="11" face="Impact">
+			<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+			</font></li>
+	</div>
+	</div>
+
+<div CLASS= "footer">
+	<small>Copyright &copy; team_QIM, all rights reserved.</small>
+	<br><br><br>
+</div>
+</body>
+</html>
