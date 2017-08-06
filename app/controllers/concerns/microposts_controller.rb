@@ -1,35 +1,37 @@
-#class MicropostsController <  UsersController
- class MicropostsController < ApplicationController
-  before_action :set_micropost, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+class MicropostsController < ApplicationController
+  before_action :set_micropost, only: [:show, :edit, :update, :destroy]
 
   # GET /microposts
   # GET /microposts.json
   def index
+    @msg = 'Microposts cont. index アクション'
     @microposts = Micropost.all
-    
   end
 
   # GET /microposts/1
   # GET /microposts/1.json
   def show
-#        @microposts = Micropost.all
-      @micropost = Micropost.find(params[:id])
+    @msg = 'Microposts cont. show アクション'
+    @micropost = Micropost.find(params[:id])
   end
 
   # GET /microposts/new
   def new
+     @msg = 'Microposts cont. new アクション'
     @micropost = Micropost.new
   end
 
   # GET /microposts/1/edit
   def edit
+    @msg = 'Microposts cont. edit アクション'
   end
 
   # POST /microposts
   # POST /microposts.json
   def create
+    @msg = 'Microposts cont. creste アクション'
     @micropost = Micropost.new(micropost_params)
-
+    
     respond_to do |format|
       if @micropost.save
         format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }

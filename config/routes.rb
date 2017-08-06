@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
+  get '/microposts'   => 'microposts#index'
+  get '/users'        => 'users#index'
+###
   get 'sessions/new'
-
   get 'users/new'
 ###
   resources :microposts
   
-  #root 'users#index'
-  root                'static_pages#home'
+# root                'users#index'
+ root                'static_pages#home'
   get 'static_pages/home'
   get    '/help'    => 'static_pages#help'
   get    '/login'   => 'sessions#new'

@@ -11,7 +11,12 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @user = User.find(params[:id])
   end
   
+  def edit
+  @msg = 'Users cont. edit アクション'
+  end
+  
   def new
+    @msg = 'Users cont. new アクション'
     @user = User.new
   end
   

@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+      <p><%= @msg %></p>
 <p>
   <strong>Content:</strong>
   <%= @micropost.content %>
@@ -8,6 +8,7 @@
 <p>
   <strong>User:</strong>
   <%= @micropost.user_id %>
+
 </p>
 
 <%= link_to 'Edit', edit_micropost_path(@micropost) %> |
