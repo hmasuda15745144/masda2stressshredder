@@ -1,16 +1,18 @@
 class MicropostsController < ApplicationController
-#  before_action :logged_in_user, only: [:index, :create, :destroy,:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :create, :destroy,:show, :edit, :update, :destroy]
 
   # GET /microposts
   # GET /microposts.json
   def index
     @microposts = Micropost.all
+    
   end
 
   # GET /microposts/1
   # GET /microposts/1.json
   def show
-        @microposts = Micropost.all
+#        @microposts = Micropost.all
+      @micropost = Micropost.find(params[:id])
   end
 
   # GET /microposts/new
