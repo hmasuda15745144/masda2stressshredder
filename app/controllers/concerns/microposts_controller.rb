@@ -1,5 +1,6 @@
-class MicropostsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :create, :destroy,:show, :edit, :update, :destroy]
+#class MicropostsController <  UsersController
+ class MicropostsController < ApplicationController
+  before_action :set_micropost, only: [:index, :show, :new, :edit, :create, :update, :destroy]
 
   # GET /microposts
   # GET /microposts.json
