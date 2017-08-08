@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
+  get   'mock'      =>'static_pages#list2'
+
   get 'sessions/new'
-
   get 'users/new'
-
   #resources :microposts
   
   #root 'users#index'
