@@ -17,7 +17,7 @@ body	{font-family: 'メイリオ',
 		'Hiragino Kaku Gothic Pro',
 		sans-serif;
 		background-color: #edede3}
-
+	
 h1		
 		{font-size:45px;
 		text-shadow: 5px 2px 3px #aaaaaa}
@@ -27,15 +27,15 @@ p     	{line-height: 1}
 .container{
   width : 900px;
 }
-.content{
-  width : 500px;
+div.content {
+  width : 60%;
   float : left;
 }
- .menu{
-  width : 400px;
-  float : left;
+div.menu {
+  width : 40%;
+  float : right;
 }
-.footer{
+div.footer{
   width : 900px;
   clear : both;
 }
