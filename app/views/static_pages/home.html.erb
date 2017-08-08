@@ -13,46 +13,50 @@
 
 	<div CLASS= "container"> 
 
-	   <p>コップが溢れてしまう前に、<br>「ぐち」「じまん」「おいのり」３種類の本音を吐き出してしまおう。<br>自分が抱えている気持ちをあえて言葉にすることで葛藤を見出せる・・・・かも。</p>
+	   <p>コップが溢れてしまう前に、<br>
+	   　　「ぐち」「じまん」「おいのり」<br>
+	   　　　　　３種類の本音を吐き出してしまおう。<br>
+	   　　自分が抱えている気持ちを<br>
+	   　　　　　あえて言葉にすることで葛藤を見出せる・・・・かも。</p>
+	   　　　　　
 	<div CLASS= "content">
 		<article>
 			<figure　>
 			<%= image_tag 'jizou.png' , :alt => 'お地蔵さんです。' %>
-<!---	<img src= "jizou.png"　alt= "お地蔵さんです。"　--->
 			</figure>
 			<h2>Nouaru-Taka Tsume Kakusu</h2>
 		</article>
-
 	</div>
+	
 	<div CLASS= "menu">
-		<aside>
-		<ul>
+	<aside>
+	<ul>
 		<li><font size="11">
-		<%= link_to 'ぐち', 'guchi.html' %>
+		   <%= link_to 'ぐち', 'guchi.html' %>
 		</font>
 		</li>
-		<br>
-<!---		<li><a href= "guch.html"><font size="11">ぐち</font></a></li> --->
+		  <br><br>
 		<li><font size="11">
-		<%= link_to 'じまん', 'jiman.html' %>
+		    <%= link_to 'じまん', 'jiman.html' %>
 		</font></li>
-<!---		<li><a href= "guch.html"><font size="11">じまん</font></a></li> --->
-				<br>
+		  <br><br>
 		<li><font size="11">
-		<%= link_to 'おいのり', 'inori.html' %>
+		    <%= link_to 'おいのり', 'inori.html' %>
 		</font></li>
-<!---		<li><a href= "guch.html"><font size="11">おいのり</font></a></li> --->
-				<br>
+		  <br><br>
 		</ul>
 		</aside>
+		
 		<br><br><br><br><br>
-			<font size="11" face="Impact">
-			<%= link_to 'ふりかえり', 'list.html' %>
-			</font></li>
-				<br><br><br><br><br>
-			<font size="11" face="Impact">
-			<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-			</font></li>
+		<Center>
+		  <font size="11" face="Impact">
+		  <%= link_to 'ふりかえり', 'list.html' %></font></li>
+		</Center>
+		
+		<br><br><br><br><br>
+		 <font size="11" face="Impact">
+		 <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+		 </font></li>
 	</div>
 	</div>
 
