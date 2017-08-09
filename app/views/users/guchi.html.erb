@@ -5,26 +5,31 @@
 	<title>StressShredder</title>
 	<%= stylesheet_link_tag "guchi" %>
 </head>
+      <p><%= @msg %></p>
 <body>
 	<header>
 		<h1>StressShredder</h1>
 	</header>
 	<article>
-	<h1>ぐちを吐き出しましょう</h1>
-	<p>
-	<h2>これから、ぐちをこぼす人として、気持ちを言葉にして発散したい。</h2>
-	<h2>そうすれば、気持ちがスッキリするからだ。</h2>
-	<label>
-	ぐち：<textarea name= "usercomment"></textarea> 
-	</label>
-	</p>
-	<form action="guchi-feedback.html" >
-    <input type="submit" value="確定">
-	
+	  <h1>ぐちを吐き出しましょう</h1>
+	  <p>
+	  <h2>これから、ぐちをこぼす人として、気持ちを言葉にして発散したい。</h2>
+	  <h2>そうすれば、気持ちがスッキリするからだ。</h2>
+	  <label>
+
+	  <%= form_for(@micropost, controller:'users', action:'new' ) do |form| %>
+      <h1>ぐち:</h1>
+	  </label>
+	  </p>
+<!---	<form action="guchi-feedback.html" > --->
+<!---    <input type="submit" value="確定"> --->
+      <%= form.text_area :content, {clos:40, rows:10} %>
+      <%= form.submit "確定" %>
+      <% end %>
+
 	</article>
 	<footer>
 		<small>Copyright &copy; team_QIM, all rights reserved.</small>
 	</footer>
-	
 </body>
 </html>

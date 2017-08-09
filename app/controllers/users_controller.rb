@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :update, :destroy]
+before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :new, :update, :destroy]
     
   def list
     @msg = 'Users cont. list アクション'
@@ -9,6 +9,10 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :u
   def guchi
     @msg = 'Users cont. guchi アクション'
     @user = User.find(params[:id])
+  end
+  
+  def guchi_feedback
+    @msg = 'Users cont. guchi_feedback アクション'
   end
   
   def jiman
