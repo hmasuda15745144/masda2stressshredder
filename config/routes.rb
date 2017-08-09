@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get    '/guchi_feedback'    => 'users#guchi_feedback'
+  get    '/inori_feedback'    => 'users#inori_feedback'
+  get    '/jiman_feedback'    => 'users#jiman_feedback'
   get    '/guchi/:id'    => 'users#guchi'
   get    '/jiman/:id'    => 'users#jiman'
   get    '/inori/:id'    => 'users#inori'

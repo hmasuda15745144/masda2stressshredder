@@ -15,11 +15,17 @@
 	<h2>これから、自慢する人として、自分の感動を記録しておきたい。</h2>
 	<h2>そうすれば、情熱が生まれるからだ。</h2>
 	<label>
-	じまん：<textarea name= "usercomment"></textarea> 
-	</label>
-	</p>
-	<form action="jiman-feedback.html" >
-    <input type="submit" value="確定">
+
+	  <%= form_for(@micropost, controller:'users', action:'jiman_feedback' ) do |form| %>
+
+      <h1>じまん:</h1>
+	  </label>
+	  </p>
+      <%= form.text_area :content, {clos:40, rows:10} %>
+      <%= form.submit "確定" %>
+      <% end %>
+    
+    
 	</article>
 	<footer>
 		<small>Copyright &copy; team_QIM, all rights reserved.</small>

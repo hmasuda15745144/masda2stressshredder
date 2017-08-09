@@ -20,9 +20,17 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :n
     @user = User.find(params[:id])
   end
   
+  def jiman_feedback
+    @msg = 'Users cont. jiman_feedback アクション'
+  end
+  
   def inori
     @msg = 'Users cont. inori アクション'
     @user = User.find(params[:id])
+  end
+
+  def inori_feedback
+    @msg = 'Users cont. inori_feedback アクション'
   end
   
   def index
