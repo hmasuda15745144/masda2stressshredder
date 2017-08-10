@@ -16,15 +16,24 @@
 	  <h2>これから、ぐちをこぼす人として、気持ちを言葉にして発散したい。</h2>
 	  <h2>そうすれば、気持ちがスッキリするからだ。</h2>
 	  <label>
-	  	
-	  <%= form_for(@micropost, controller:'users', action:'guchi_feedback' ) do |form| %>
 
-      <h1>ぐち:</h1>
-	  </label>
-	  </p>
-      <%= form.text_area :content, {clos:40, rows:10} %>
-      <%= form.submit "確定" %>
-      <% end %>
+<table>
+	<form method="post" action="/microposts/create">
+	<tr><th>ぐち：</th>
+		<td><input type="text" name="content"></td></tr>
+	</tr>
+	<tr><th></th>
+		<td><input type="submit"></td></tr>
+	</tr>
+	</form>
+</table>
+-------
+<%= form_for(@micropost) do |f| %>
+  <%= f.file_field :content, accept: "images/guchi-background-1s.jpg" %>
+  <%= f.submit "送信する" %>
+<% end %>
+-------
+
 
 	</article>
 	<footer>

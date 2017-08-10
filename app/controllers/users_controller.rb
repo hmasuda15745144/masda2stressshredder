@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :new, :update, :destroy]
+before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :update, :destroy]
     
   def list
     @msg = 'Users cont. list アクション'
@@ -46,9 +46,8 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :n
   def edit
   @msg = 'Users cont. edit アクション'
   end
-  
+
   def new
-    @msg = 'Users cont. new アクション'
     @user = User.new
   end
   

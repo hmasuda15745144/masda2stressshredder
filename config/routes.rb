@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+#  get '  get '/microposts/index'/:id'   => 'microposts#index'
+  
   get    '/guchi_feedback'    => 'users#guchi_feedback'
   get    '/inori_feedback'    => 'users#inori_feedback'
   get    '/jiman_feedback'    => 'users#jiman_feedback'

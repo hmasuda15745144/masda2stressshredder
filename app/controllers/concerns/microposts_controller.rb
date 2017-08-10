@@ -8,10 +8,10 @@ class MicropostsController < ApplicationController
   
   # GET /microposts
   # GET /microposts.json
-  def index
-    @msg = 'Microposts cont. index アクション'
-    @micropost = Micropost.find(params[:id])
-  end
+  #def index
+  #  @msg = 'Microposts cont. index アクション'
+  #  @micropost = Micropost.find(params[:id])
+  #end
 
   # GET /microposts/1
   # GET /microposts/1.json
