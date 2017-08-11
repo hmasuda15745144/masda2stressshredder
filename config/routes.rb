@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-
+  get '/users/show/:id'        => 'users#show'
+  
 #  get '  get '/microposts/index'/:id'   => 'microposts#index'
   
   get    '/guchi_feedback'    => 'users#guchi_feedback'

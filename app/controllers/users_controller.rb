@@ -41,6 +41,7 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :u
   def show
     @msg = 'Users cont. show アクション'
     @user = User.find(params[:id])
+    @micropost = Micropost.find(params[:id])
   end
   
   def edit
