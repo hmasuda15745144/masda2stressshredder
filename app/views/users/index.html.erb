@@ -67,7 +67,7 @@
     comment: <%= @micropost.content %><br>
     render: <%= render @micropost %><br>
 	===
-
+    id: <%= params[:id] %><br>
 
 
   ===
@@ -76,14 +76,9 @@
 			<font size="11" face="Impact">
 			<%= link_to 'ふりかえり', controller: 'users', action: 'show' , users: @user %> 
 			</font></li>
-				<br><br>
-				
-				
-
-
+		  <br><br>
 				
 				<br><br><br>
-				
 			<font size="11" face="Impact">
 			<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 			</font></li>

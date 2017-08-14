@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   get '/users/list/:id'        => 'users#list'
 ###
   get 'sessions/new'
-  get 'users/new'
+  get 'users/new'       => 'users#new'
+  get 'microposts/new'  => 'microposts#new'
 ###
   resources :microposts
   

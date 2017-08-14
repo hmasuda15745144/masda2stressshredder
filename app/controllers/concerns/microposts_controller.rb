@@ -20,15 +20,15 @@ class MicropostsController < ApplicationController
     @micropost = Micropost.find(params[:id])
   end
 
-  # GET /microposts/new
-  def new
-     @msg = 'Microposts cont. new アクション'
-    @micropost = Micropost.new
-  end
-
   # GET /microposts/1/edit
   def edit
     @msg = 'Microposts cont. edit アクション'
+  end
+  
+    # GET /microposts/new
+  def new
+    @msg = 'Microposts cont. new アクション'
+    @micropost = Micropost.new
   end
 
   # POST /microposts
