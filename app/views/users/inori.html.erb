@@ -1,0 +1,34 @@
+<!DOCUTYPE html>
+<html land= "ja">
+<head>
+	<meta charset= "utf-8">
+	<title>StressShredder</title>
+	<%= stylesheet_link_tag "inori" %>
+</head>
+<body>
+	<header>
+		<h1>StressShredder</h1>
+	</header>
+	<article>
+	<h1>おいのりしましょう</h1>
+	<p>
+	<h2>これから、お祈りする人として、自分の願いを記しておきたい。</h2>
+	<h2>そうすれば、感謝の気持ちで、集中できるからだ。</h2>
+	<label>
+
+	  <%= form_for(@micropost, controller:'users', action:'inori_feedback' ) do |form| %>
+
+      <h1>おいのり:</h1>
+	  </label>
+	  </p>
+      <%= form.text_area :content, {clos:40, rows:10} %>
+      <%= form.submit "確定" %>
+      <% end %>
+
+	</article>
+	<footer>
+		<small>Copyright &copy; team_QIM, all rights reserved.</small>
+	</footer>
+	
+</body>
+</html>
