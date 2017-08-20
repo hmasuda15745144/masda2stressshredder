@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get    '/guchi/:id'    => 'users#guchi'
   get    '/jiman/:id'    => 'users#jiman'
   get    '/inori/:id'    => 'users#inori'
-  get    '/list/:id'    => 'users#show'
+  get    '/list/:id'    => 'users#list'
 #
   get '/microposts/:id'   => 'microposts#index'
   get '/microposts/list/:id'   => 'microposts#list'

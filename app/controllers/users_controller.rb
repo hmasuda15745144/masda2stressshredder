@@ -3,7 +3,7 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :u
     
   def list
     @msg = 'Users cont. list アクション'
-    @users = User.all
+    @user = User.find(params[:id])
   end
 
   def guchi

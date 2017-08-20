@@ -4,7 +4,6 @@
     <section class="user_info">
       <h1></h1>
 
-      
 
         </h1>
     </section>
@@ -38,8 +37,8 @@
 			</figure>
 			<h2>Nouaru-Taka Tsume Kakusu</h2>
 		</article>
-		
 	</div>
+	
 	<div CLASS= "menu">
 		<aside>
 		<ul>
@@ -58,27 +57,49 @@
 				<br>
 		</ul>
 		</aside>
-		
-		gravatar:<%= gravatar_for @user %><br>
-    name:<%= @user.name %><br>
-    email:<%= @user.email %><br>
+	===
+  id: <%= params[:id] %><br>		
+		gravatar: <%= gravatar_for @user %><br>
+    name: <%= @user.name %><br>
+    email: <%= @user.email %><br>
     <br>
     couunts: <%= @user.microposts.count %><br>
     comment: <%= @micropost.content %><br>
+    ===	<br>
+    <%= @user.microposts.each {|id,content|
+     puts "#{id}:#{content}" } %><br>
+    ===	<br>
+    ===comment list	<br>
+    User name:　<%= @user.name %><br>
+<table>
+  <thead>
+    <tr>
+      <th>#:　</th>
+      <th>Content:　</th>
+      <th>updated_at:　</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.microposts.each do |micropost| %>
+      <tr>
+        <td><%= micropost.id %></td>
+        <td><%= micropost.content %></td>
+
+        <td><%= micropost.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+    ===	<br>
+    
     render: <%= render @micropost %><br>
-	===
-    id: <%= params[:id] %><br>
-
-
   ===
-		
 		<br><br><br><br><br>
 			<font size="11" face="Impact">
-			<%= link_to 'ふりかえり', controller: 'users', action: 'show' , users: @user %> 
+			<%= link_to 'ふりかえり', controller: 'users', action: 'list' , users: @user %> 
 			</font></li>
-		  <br><br>
-				
-				<br><br><br>
+		    <br><br>
+			  <br><br><br>
 			<font size="11" face="Impact">
 			<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 			</font></li>
