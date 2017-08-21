@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :update, :destroy]
+# before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :update, :destroy]
+before_action :logged_in_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :update, :destroy]
     
   def list
     @msg = 'Users cont. list アクション'
@@ -78,4 +79,13 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :u
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+    
+     # beforeフィルター
+
+    # 正しいユーザーかどうかを確認
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
+    
 end
