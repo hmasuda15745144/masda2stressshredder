@@ -50,6 +50,7 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :u
   end
 
   def new
+    @msg = 'Users cont. new アクション'
     @user = User.new
   end
   

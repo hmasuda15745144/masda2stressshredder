@@ -24,6 +24,12 @@ class MicropostsController < ApplicationController
   def edit
     @msg = 'Microposts cont. edit アクション'
   end
+
+    # GET /microposts/new
+  def guchi
+    @msg = 'Microposts cont. guchi アクション'
+    @micropost = Micropost.new
+  end
   
     # GET /microposts/new
   def new
