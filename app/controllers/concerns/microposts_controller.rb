@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
-  before_action :set_micropost, only: [:index, :show, :edit, :update, :destroy]
-
+#  before_action :set_micropost, only: [:index, :show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
+  
   def list
     @msg = 'Microposts controller list アクション'
     @microposts = Micropost.all
