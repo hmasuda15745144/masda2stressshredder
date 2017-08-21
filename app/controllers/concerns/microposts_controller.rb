@@ -9,10 +9,10 @@ class MicropostsController < ApplicationController
   
   # GET /microposts
   # GET /microposts.json
-  #def index
-  #  @msg = 'Microposts cont. index アクション'
-  #  @micropost = Micropost.find(params[:id])
-  #end
+  def index
+    @msg = 'Microposts cont. index アクション'
+    @micropost = Micropost.find(params[:id])
+  end
 
   # GET /microposts/1
   # GET /microposts/1.json
@@ -44,15 +44,16 @@ class MicropostsController < ApplicationController
     @msg = 'Microposts cont. creste アクション'
     @micropost = Micropost.new(micropost_params)
     
-    respond_to do |format|
-      if @micropost.save
-        format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }
-        format.json { render :show, status: :created, location: @micropost }
-      else
-        format.html { render :new }
-        format.json { render json: @micropost.errors, status: :unprocessable_entity }
-      end
+    @micropost = current_user.microposts.build(micropost_params)
+    if @micropost.save
+      flash[:success] = "Micropost created!"
+      redirect_to root_url
+    else
+      render 'static_pages/home'
     end
+  end
+  
+  def destroy
   end
 
   # PATCH/PUT /microposts/1
