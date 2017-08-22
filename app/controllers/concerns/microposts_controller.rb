@@ -43,11 +43,13 @@ class MicropostsController < ApplicationController
   def create
     @msg = 'Microposts cont. creste アクション'
     @micropost = Micropost.new(micropost_params)
-    
     @micropost = current_user.microposts.build(micropost_params)
+    
     if @micropost.save
       flash[:success] = "Micropost created!"
-      redirect_to root_url
+        redirect_to root_url
+#      redirect_to controller: 'users', action: 'index',id: [:id]
+
     else
       render 'static_pages/home'
     end
