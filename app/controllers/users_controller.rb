@@ -20,6 +20,7 @@ before_action :logged_in_user, only: [:guchi, :jiman, :inori, :index, :show, :ed
   def jiman
     @msg = 'Users cont. jiman アクション'
     @user = User.find(params[:id])
+    @micropost = Micropost.new
   end
   
   def jiman_feedback
@@ -29,6 +30,7 @@ before_action :logged_in_user, only: [:guchi, :jiman, :inori, :index, :show, :ed
   def inori
     @msg = 'Users cont. inori アクション'
     @user = User.find(params[:id])
+    @micropost = Micropost.new
   end
 
   def inori_feedback
