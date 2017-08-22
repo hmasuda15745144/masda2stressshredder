@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
   get '/users/show/:id'        => 'users#show'
-  
+###  
+   get 'microposts/guchi/:id'  => 'microposts#guchi'
 #  get '  get '/microposts/index'/:id'   => 'microposts#index'
+
+#  get    '/guchi-feedback' => 'static_pages#guchi-feedback'
+#  get    '/jiman-feedback' => 'static_pages#jiman-feedback'
+#  get    '/inori-feedback' => 'static_pages#inori-feedback'
   
   get    '/guchi_feedback'    => 'users#guchi_feedback'
   get    '/inori_feedback'    => 'users#inori_feedback'
   get    '/jiman_feedback'    => 'users#jiman_feedback'
+###
   get    '/guchi/:id'    => 'users#guchi'
   get    '/jiman/:id'    => 'users#jiman'
   get    '/inori/:id'    => 'users#inori'
@@ -14,14 +20,14 @@ Rails.application.routes.draw do
 #
   get '/microposts/:id'   => 'microposts#index'
   get '/microposts/list/:id'   => 'microposts#list'
+###
+  get '/users/guchi/:id'        => 'users#guchi'  
   get '/users/:id'        => 'users#index'
   get '/users/list/:id'        => 'users#list'
 ###
   get 'sessions/new'
   get 'users/new'       => 'users#new'
   get 'microposts/new/:id'  => 'microposts#new'
-###
-  get 'microposts/guchi/:id'  => 'microposts#guchi'
 ###
   resources :microposts
   
@@ -43,10 +49,7 @@ resources :users
 #  get    '/list'    => 'static_pages#list'
   get    '/signup'  => 'users#new'
    #post '/signup'  => 'users#create'
-  
-  get    '/guchi-feedback' => 'static_pages#guchi-feedback'
-  get    '/jiman-feedback' => 'static_pages#jiman-feedback'
-  get    '/inori-feedback' => 'static_pages#inori-feedback'
+
 ###
 
   

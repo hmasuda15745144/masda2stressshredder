@@ -10,6 +10,7 @@ before_action :logged_in_user, only: [:guchi, :jiman, :inori, :index, :show, :ed
   def guchi
     @msg = 'Users cont. guchi アクション'
     @user = User.find(params[:id])
+    @micropost = Micropost.new
   end
   
   def guchi_feedback
