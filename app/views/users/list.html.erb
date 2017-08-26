@@ -9,9 +9,9 @@ user id: <%= @user.id %><br>
   <thead>
     <tr>
       <th>#:</th>
-      <th>kubun:</th>
-      <th>updated_at:</th>
-      <th>Content:</th>
+      <th>区分：</th>
+      <th>書き込み日時：</th>
+      <th>コメント：</th>
 
     </tr>
   </thead>
@@ -26,6 +26,7 @@ user id: <%= @user.id %><br>
     <% end %>
   </tbody>
 </table>
+区分：(1:ぐち)(2:じまん)(3:おいのり)<br>
     ===	<br>
 <br>
 <%= link_to 'New User', new_user_path %>
