@@ -1,9 +1,9 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
+    <%= f.label :コメント %>
     <%= f.text_area :content, placeholder: "コメントを書き入れてください。" %>
-    <%= f.label :kubun %>
-    <%= f.number_field :kubun %>
+    <%= f.hidden_field :kubun  %>
   </div>
   <%= f.submit "送信する。", class: "btn btn-primary" %>
 <% end %>
