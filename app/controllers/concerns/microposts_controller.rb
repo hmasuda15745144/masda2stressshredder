@@ -44,15 +44,15 @@ class MicropostsController < ApplicationController
     @msg = 'Microposts cont. creste アクション'
     @micropost = Micropost.new(micropost_params)
     @micropost = current_user.microposts.build(micropost_params)
-    
-    
-    
+
     
     if @micropost.save
-      flash[:success] = "Micropost created!"
-        redirect_to root_url
-#      redirect_to controller: 'users', action: 'index',id: @user.id
-
+      flash[:success] = "Micropost created !!!"
+#        redirect_to root_url
+#      redirect_to controller: :users , action: :index 
+###       redirect_back fallback_location: { controller: :users , action: :index }
+      redirect_to controller: :users , action: :index ,id: [@micropost.user_id]
+#
     else
       render 'static_pages/home'
     end
