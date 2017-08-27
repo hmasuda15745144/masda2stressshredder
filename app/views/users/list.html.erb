@@ -4,14 +4,14 @@
 <h1>ふりかえり</h1>
 <br>
 
-user id: <%= @user.id %><br>
-<table>
+
+<table border="1">
   <thead>
     <tr>
-      <th>#:</th>
-      <th>区分：</th>
-      <th>書き込み日時：</th>
-      <th>コメント：</th>
+      <th>番号</th>
+      <th>区分</th>
+      <th>書き込み日時</th>
+      <th>コメント</th>
 
     </tr>
   </thead>
@@ -27,6 +27,9 @@ user id: <%= @user.id %><br>
   </tbody>
 </table>
 区分：(1:ぐち)(2:じまん)(3:おいのり)<br>
-    ===	<br>
 <br>
-<%= link_to 'New User', new_user_path %>
+	<footer>
+		<small>Copyright &copy; team_QIM, all rights reserved.</small>
+	</footer>
+</body>
+</html>

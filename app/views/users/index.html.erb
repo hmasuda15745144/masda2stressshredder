@@ -1,4 +1,4 @@
-<% # provide(:title, @user.name) %>
+<% provide(:title, @user.name) %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -10,9 +10,6 @@
   </aside>
 </div>
 
-<br>
-<%= link_to 'New User', new_user_path %>
-=========
 <!DOCUTYPE html>
 <html land= "ja">
 <head>
@@ -26,7 +23,7 @@
 		<h1>Welcome to the StressShredder</h1>
 	</header>
 	
-      <p><%= @msg %></p>
+
       
 	<div CLASS= "container"> 
 	<div CLASS= "content">
@@ -38,7 +35,7 @@
 			<h2>Nouaru-Taka Tsume Kakusu</h2>
 		</article>
 	</div>
-	
+	<br><br><br><br><br><br><br><br><br><br><br>
 	<div CLASS= "menu">
 		<aside>
 		<ul>
@@ -47,65 +44,23 @@
      <%= link_to 'ぐち', controller: 'users', action: 'guchi' ,  users: @user %> 
 		</font>
 		</li>
-		<br>
+		  <br><br><br><br>
 		<li><font size="11">
 		<%= link_to 'じまん', controller: 'users', action: 'jiman' , users: @user %> 
 		</font></li>
-				<br>
+		  <br><br><br><br>
 		<li><font size="11">
 		<%= link_to 'おいのり', controller: 'users', action: 'inori' , users: @user %> 
 		</font></li>
-				<br>
+		  <br><br><br><br><br>
 		</ul>
 		</aside>
-	===
-  id: <%= params[:id] %><br>		
-		gravatar: <%= gravatar_for @user %><br>
-    name: <%= @user.name %><br>
-    email: <%= @user.email %><br>
-    <br>
-    couunts: <%= @user.microposts.count %><br>
 
-    ===	<br>
-    <%= @user.microposts.each {|id,content|
-     puts "#{id}:#{content}" } %><br>
-    ===	<br>
-    ===comment list	<br>
-    User name:　<%= @user.name %><br>
-<table>
-  <thead>
-    <tr>
-      <th>#:</th>
-      <th>kubun:</th>
-      <th>updated_at:</th>
-      <th>Content:</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <% @user.microposts.each do |micropost| %>
-      <tr>
-        <td><%= micropost.id %></td>
-        <td><%= micropost.kubun %></td>
-        <td><%= micropost.updated_at %></td>
-        <td><%= micropost.content %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-    ===	<br>
-    
-
-  ===
-		<br><br><br><br><br>
+  
+		<br><br><br><br><br><br><br><br>
 			<font size="11" face="Impact">
 			<%= link_to 'ふりかえり', controller: 'users', action: 'list' , users: @user %> 
-			</font></li>
-		    <br><br>
-			  <br><br><br>
-			<font size="11" face="Impact">
-			<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-			</font></li>
+			</font>
 	</div>
 	</div>
 

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+
+###
   get '/users/show/:id'        => 'users#show'
 ###  
-   get 'microposts/guchi/:id'  => 'microposts#guchi'
+   get '/microposts/guchi/:id'  => 'microposts#guchi'
 #  get '  get '/microposts/index'/:id'   => 'microposts#index'
 
   get    '/guchi-feedback' => 'static_pages#guchi-feedback'
