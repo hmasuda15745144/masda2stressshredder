@@ -5,13 +5,13 @@ Rails.application.routes.draw do
    get 'microposts/guchi/:id'  => 'microposts#guchi'
 #  get '  get '/microposts/index'/:id'   => 'microposts#index'
 
-  get    '/guchi-feedback' => 'static_pages#guchi-feedback'
-  get    '/jiman-feedback' => 'static_pages#jiman-feedback'
-  get    '/inori-feedback' => 'static_pages#inori-feedback'
+#  get    '/guchi-feedback' => 'static_pages#guchi-feedback'
+#  get    '/jiman-feedback' => 'static_pages#jiman-feedback'
+#  get    '/inori-feedback' => 'static_pages#inori-feedback'
   
-#  get    '/guchi_feedback'    => 'users#guchi_feedback'
-#  get    '/inori_feedback'    => 'users#inori_feedback'
-#  get    '/jiman_feedback'    => 'users#jiman_feedback'
+  get    '/users/guchi_feedback'    => 'users#guchi_feedback'
+  get    '/inori_feedback'    => 'users#inori_feedback'
+  get    '/jiman_feedback'    => 'users#jiman_feedback'
 ###
   get    '/guchi/:id'    => 'users#guchi'
   get    '/jiman/:id'    => 'users#jiman'
