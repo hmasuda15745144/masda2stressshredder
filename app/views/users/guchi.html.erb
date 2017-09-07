@@ -5,7 +5,7 @@
 	<title>StressShredder</title>
 	<%= stylesheet_link_tag "guchi" %>
 </head>
-      <p><%= @msg %></p>
+
 <body>
 	<header>
 		<h1>StressShredder</h1>
@@ -16,26 +16,35 @@
 	  <h2>これから、ぐちをこぼす人として、気持ちを言葉にして発散したい。</h2>
 	  <h2>そうすれば、気持ちがスッキリするからだ。</h2>
 	  <label>
+	    
+<h1>ぐち：</h1>
 
-<table>
-	<form method="post" action="/microposts/create">
-	<tr><th>ぐち：</th>
-		<td><input type="text" name="content"></td></tr>
-	</tr>
-	<tr><th></th>
-		<td><input type="submit"></td></tr>
-	</tr>
-	</form>
-</table>
--------
-<%= form_for(@micropost) do |f| %>
-  <%= f.file_field :content, accept: "images/guchi-background-1s.jpg" %>
-  <%= f.submit "送信する" %>
+<% @micropost.attributes = { kubun: "1"} %> 
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to the Sample App</h1>
+
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+
+
 <% end %>
--------
 
 
-	</article>
+
 	<footer>
 		<small>Copyright &copy; team_QIM, all rights reserved.</small>
 	</footer>

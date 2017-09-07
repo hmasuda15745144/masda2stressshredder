@@ -1,14 +1,16 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :update, :destroy]
+# before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :update, :destroy]
+before_action :logged_in_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :update, :destroy]
     
   def list
     @msg = 'Users cont. list アクション'
-    @users = User.all
+    @user = User.find(params[:id])
   end
 
   def guchi
     @msg = 'Users cont. guchi アクション'
     @user = User.find(params[:id])
+    @micropost = Micropost.new
   end
   
   def guchi_feedback
@@ -18,6 +20,7 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :u
   def jiman
     @msg = 'Users cont. jiman アクション'
     @user = User.find(params[:id])
+    @micropost = Micropost.new
   end
   
   def jiman_feedback
@@ -27,6 +30,7 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :u
   def inori
     @msg = 'Users cont. inori アクション'
     @user = User.find(params[:id])
+    @micropost = Micropost.new
   end
 
   def inori_feedback
@@ -47,9 +51,11 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :u
   
   def edit
   @msg = 'Users cont. edit アクション'
+  @user = User.find(params[:id])
   end
 
   def new
+    @msg = 'Users cont. new アクション'
     @user = User.new
   end
   
@@ -76,5 +82,13 @@ before_action :set_user, only: [:guchi, :jiman, :inori, :index, :show, :edit, :u
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
+    end
+    
+     # beforeフィルター
+
+    # 正しいユーザーかどうかを確認
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
     end
 end

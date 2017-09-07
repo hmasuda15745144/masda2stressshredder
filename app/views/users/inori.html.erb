@@ -16,14 +16,35 @@
 	<h2>そうすれば、感謝の気持ちで、集中できるからだ。</h2>
 	<label>
 
-	  <%= form_for(@micropost, controller:'users', action:'inori_feedback' ) do |form| %>
+
+<% @micropost.attributes = { kubun: "3"} %> 
 
       <h1>おいのり:</h1>
-	  </label>
-	  </p>
-      <%= form.text_area :content, {clos:40, rows:10} %>
-      <%= form.submit "確定" %>
-      <% end %>
+
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to the Sample App</h1>
+    <h2>
+      This is the home page for the
+
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+
+
+<% end %>
 
 	</article>
 	<footer>

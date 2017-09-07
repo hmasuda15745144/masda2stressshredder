@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
-  before_action :set_micropost, only: [:index, :show, :edit, :update, :destroy]
-
+#  before_action :set_micropost, only: [:index, :show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
+  
   def list
     @msg = 'Microposts controller list アクション'
     @microposts = Micropost.all
@@ -8,10 +9,10 @@ class MicropostsController < ApplicationController
   
   # GET /microposts
   # GET /microposts.json
-  #def index
-  #  @msg = 'Microposts cont. index アクション'
-  #  @micropost = Micropost.find(params[:id])
-  #end
+  def index
+    @msg = 'Microposts cont. index アクション'
+    @micropost = Micropost.find(params[:id])
+  end
 
   # GET /microposts/1
   # GET /microposts/1.json
@@ -24,6 +25,20 @@ class MicropostsController < ApplicationController
   def edit
     @msg = 'Microposts cont. edit アクション'
   end
+
+    # GET /microposts/new
+  def guchi
+    @msg = 'Microposts cont. guchi アクション'
+    @micropost = Micropost.new
+  end
+
+  def guchi_feedback
+    @msg = 'Microposts cont. guchi アクション'
+    redirect_to controller: :users , action: :index ,id: [@micropost.user_id]
+  end
+  
+  
+  
   
     # GET /microposts/new
   def new
@@ -36,16 +51,31 @@ class MicropostsController < ApplicationController
   def create
     @msg = 'Microposts cont. creste アクション'
     @micropost = Micropost.new(micropost_params)
-    
-    respond_to do |format|
-      if @micropost.save
-        format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }
-        format.json { render :show, status: :created, location: @micropost }
-      else
-        format.html { render :new }
-        format.json { render json: @micropost.errors, status: :unprocessable_entity }
-      end
+    @micropost = current_user.microposts.build(micropost_params)
+#
+    if @micropost.save
+      flash[:success] = "Micropost created !!!"
+#
+      case @micropost.kubun
+     when 1 then
+        render 'static_pages/guchi-feedback'
+        return
+     when 2 then
+        render 'static_pages/jiman-feedback'
+        return
+     else
+        render 'static_pages/inori-feedback'
+        return
+     end
+#
+      redirect_to controller: :users , action: :index ,id: [@micropost.user_id]
+#
+    else
+      render 'static_pages/home'
     end
+  end
+  
+  def destroy
   end
 
   # PATCH/PUT /microposts/1
@@ -80,6 +110,6 @@ class MicropostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def micropost_params
-      params.require(:micropost).permit(:content, :user_id)
+      params.require(:micropost).permit(:content, :user_id, :kubun)
     end
 end
