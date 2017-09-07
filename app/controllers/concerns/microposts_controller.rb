@@ -31,6 +31,14 @@ class MicropostsController < ApplicationController
     @msg = 'Microposts cont. guchi アクション'
     @micropost = Micropost.new
   end
+
+  def guchi_feedback
+    @msg = 'Microposts cont. guchi アクション'
+    redirect_to controller: :users , action: :index ,id: [@micropost.user_id]
+  end
+  
+  
+  
   
     # GET /microposts/new
   def new
@@ -44,13 +52,22 @@ class MicropostsController < ApplicationController
     @msg = 'Microposts cont. creste アクション'
     @micropost = Micropost.new(micropost_params)
     @micropost = current_user.microposts.build(micropost_params)
-
-    
+#
     if @micropost.save
       flash[:success] = "Micropost created !!!"
-#        redirect_to root_url
-#      redirect_to controller: :users , action: :index 
-###       redirect_back fallback_location: { controller: :users , action: :index }
+#
+      case @micropost.kubun
+     when 1 then
+        render 'static_pages/guchi-feedback'
+        return
+     when 2 then
+        render 'static_pages/jiman-feedback'
+        return
+     else
+        render 'static_pages/inori-feedback'
+        return
+     end
+#
       redirect_to controller: :users , action: :index ,id: [@micropost.user_id]
 #
     else
